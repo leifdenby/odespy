@@ -61,11 +61,11 @@ for solver in solvers:
 
 # Print
 for solver in results:
-    print '%-20s %s' % (solver, ' '.join(['%.1E' % e
-                        for e in results[solver]['error']]))
+    print('%-20s %s' % (solver, ' '.join(['%.1E' % e
+                        for e in results[solver]['error']])))
 
 from math import log
-print '\n\nConvergence results for %d periods' % num_periods
+print('\n\nConvergence results for %d periods' % num_periods)
 for solver_name in results:
     r_h = results[solver_name]['dt']
     r_E = results[solver_name]['error']
@@ -73,5 +73,5 @@ for solver_name in results:
              in range(1, len(r_h))]
     # Reformat rates with 1 decimal for rate
     rates = ', '.join(['%.1f' % rate for rate in rates])
-    print '%-20s r: %s E_min=%.1E' % \
-          (solver_name, rates, min(results[solver_name]['error']))
+    print('%-20s r: %s E_min=%.1E' % \
+          (solver_name, rates, min(results[solver_name]['error'])))

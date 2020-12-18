@@ -100,7 +100,7 @@ except IndexError:
     method = 'FE'
     dx = x[1] - x[0]
     dt = dx**2/(2*beta) # Forward Euler limit
-    print 'Forward Euler stability limit:', dt
+    print('Forward Euler stability limit:', dt)
     T = 1.2
 
 solver = solvers[method]
@@ -112,7 +112,7 @@ u, t = solver.solve(time_points)
 # Check how many time steps required by adaptive vs
 # fixed-step methods
 if hasattr(solver, 't_all'):
-    print '# time steps:', len(solver.t_all)
+    print('# time steps:', len(solver.t_all))
     plt.figure()
     plt.plot(array(solver.t_all[1:]) - array(solver.t_all[:-1]))
     plt.title('Evolution of the time step in %s' %
@@ -120,7 +120,7 @@ if hasattr(solver, 't_all'):
     plt.savefig('tmp.png'); plt.savefig('tmp.pdf')
     plt.show()
 else:
-    print '# time steps:', len(t)
+    print('# time steps:', len(t))
 
 # Make movie
 import os
@@ -134,7 +134,7 @@ plt.xlabel('x')
 plt.ylabel('u(x,t)')
 counter = 0
 for i in range(0, u.shape[0]):
-    print t[i]
+    print(t[i])
     lines[0].set_ydata(u[i,:])
     plt.legend(['t=%.3f' % t[i]])
     plt.draw()

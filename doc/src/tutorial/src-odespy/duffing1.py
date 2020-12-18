@@ -25,7 +25,7 @@ for N_per_period in Ns_per_period:
     v = u[:,1]
     error = u_exact(t) - x
     dt = t[1] - t[0]
-    print N_per_period, numpy.abs(error).max(), numpy.abs(error).max()/dt**4
+    print(N_per_period, numpy.abs(error).max(), numpy.abs(error).max()/dt**4)
 
 import sys
 sys.exit(0)
